@@ -6,11 +6,13 @@ pkg install python -y
 
 
 
+pkg install git -y
+
+
+
+
 pip install requests colorama
 
-
-
-pkg install git -y
 
 
 
@@ -21,7 +23,8 @@ git clone https://github.com/eskom21312/snapchatbruteforce.git
 
 
 
-cd dara_ibustus
+
+ls
 
 
 
