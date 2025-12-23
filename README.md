@@ -24,6 +24,15 @@ git clone https://github.com/eskom21312/snapchatbruteforce.git
 
 
 
+
+cd snapchatbruteforce
+
+
+
+
+
+
+
 ls
 
 
