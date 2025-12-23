@@ -1,9 +1,12 @@
-## this file is made for termux only the commands are
+## only for termux
 pkg update && pkg upgrade -y
 
 
-
 pkg install python -y
+
+
+
+pkg install git -y
 
 
 
@@ -13,21 +16,17 @@ pip install requests colorama
 
 
 
-pkg install git
+
+git clone https://github.com/eskom21312/snapchatbruteforce.git
 
 
 
-
-
-git clone https://github.com/eskom21312/snapchatbruteforce/blob/main/dara_ibustus.py
 
 
 
 ls
 
 
-
-cd dara_ibustus.py
 
 
 
