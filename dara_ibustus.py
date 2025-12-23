@@ -85,7 +85,6 @@ def brute_force_snapchat(username, proxy_list=None):
     print(f"{Fore.YELLOW}[!] No password found in the built-in list.")
     print(f"{Fore.YELLOW}[!] DARA IBUSTUS suggests you try a custom wordlist next time.")
     return None
-if __name__ == :
     print_banner()
     username = input(f"{Fore.CYAN}[?] Enter Snapchat username: ")
     use_proxies = input(f"{Fore.CYAN}[?] Use proxies? (y/n): ").lower()
